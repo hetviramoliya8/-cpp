@@ -1,88 +1,87 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-
-    int choice;
-
-    do{
-
-        cout << "Press for 1 for addition (+)" << endl;
-        cout << "Press for 2 for subtraction (-)" << endl;
-        cout << "Press for 3 for multiplication (*)" << endl;
-        cout << "Press for 4 for division (/)" << endl;
-        cout << "Press for 5 for modulo (%)" << endl;
-        cout << "Press for 0 for exit " << endl;
-
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        if(choice == 0){
-            cout << "Exiting the program " ;
-        }
-
-        int num1;
-        cout << "Enter first number: ";
-        cin >> num1;
-
-        int num2;
-        cout << "Enter second number: ";
-        cin >> num2;
-
-        switch(choice){
-            case 1:
-            cout << " addition of  " << num1 << " is " << num2 <<(num1, num2) << endl; 
-        break;
-
-            case 2:
-            cout << " subtraction of " << num1 << " is " << num2 << (num1, num2) << endl;
-        break;
-            
-            case 3:
-            cout << " multiplication of " << num1 << " is " << num2 << (num1 , num2) << endl;
-        break;
-
-            case 4:
-            cout << " division of " << num1 << " is " << num2 << (num1 , num2) << endl;
-        break;
-
-            case 5:
-            cout << " modulo " << num1 << " is " << num2 << (num1 , num2) << endl;
-        break; 
-        }
-            
-
-
-
-    } while (true);
-   
-}
-
-int adition (int a , int b){
-    return (a+b);
+int sum(int a,int b){
+    return  a+b;
 };
 
-int subtraction (int a , int b){
-    return (a-b);
+int subtraction(int a,int b){
+    return a-b;
 };
-int multiplication (int a, int b){
-    return (a*b);
+
+int multiply(int a,int b){
+    return a*b;
 };
-int division (int a, int b){
-    if (b==0)
-    {
-       cout << "Error :Division by zero !";
-       return 0;
+
+int division(int a,int b){
+    if (b==0){
+        cout << " Division by zero!";
+        return 0;
     }
     return a/b;
-
 }
 
-int modulo (int a, int b){
-    if (b==0)
-    {
-       cout << "Error :Division by zero !";
-       return 0;
+int module(int a, int b){
+    if (b==0){
+        cout << " Modulus by zero!";
+        return 0;
     }
     return a%b;
+}
+
+int main(){
+
+    do{
+        int choice;
+
+        cout << "Press 1 for (+)" << endl;
+        cout << "Press 2 for (-)" << endl;
+        cout << "Press 3 for (*)" << endl;
+        cout << "Press 4 for (/)" << endl;
+        cout << "Press 5 for (%)" << endl;
+        cout << "Press 0 for the exit" << endl;
+    
+        cout << "Enter your choice : ";
+        cin >> choice;
+    
+        if (choice == 0){
+            cout << "Exiting program." << endl;
+        }
+    
+        int num1;
+        cout << "Enter the first number : ";
+        cin >> num1;
+    
+        int num2;
+        cout << "Enter the Second number : ";
+        cin >> num2;
+    
+        switch(choice){
+    
+            case 1 :
+              cout << "Addition of " << num1 << " and " << num2 << " is " << sum(num1,num2) << endl; 
+            break;
+    
+            case 2 :
+              cout << "Subtraction of " << num1 << " and " << num2 << " is " << subtraction(num1,num2) << endl;
+            break;
+    
+            case 3 :
+              cout << "Multiply of " << num1 << " and " << num2 << " is " << multiply(num1,num2) << endl;
+            break;
+    
+            case 4 :
+              cout << "Division of " << num1 << " and " << num2 << " is  " << division(num1,num2) << endl;
+            break;
+    
+            case 5 : 
+              cout << "modulu of " << num1 << " and " << num2 << " is  " << module(num1,num2) << endl;
+            break;
+    
+        }
+
+    }while(true);
+
+    return 0;
+
 }
